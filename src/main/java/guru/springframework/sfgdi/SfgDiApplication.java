@@ -11,7 +11,8 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		PetController petController = ctx.getBean("petController", PetController.class);
+		PetController petController;
+		petController = (PetController) ctx.getBean("petController");
 		System.out.println("--- The Best Pet is ---");
 		System.out.println(petController.whichPetIsTheBest());
 
